@@ -187,7 +187,10 @@ const Menu = () => {
                 <CardContent>
                   <ul className="space-y-3">
                     {coffeeItems.map((item, index) => <li key={index} className="flex justify-between items-center text-sm">
-                        <span className="text-muted-foreground">{item.name}</span>
+                        <div className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                          <span className="text-muted-foreground">{item.name}</span>
+                        </div>
                         <span className="font-medium text-foreground">{item.price}</span>
                       </li>)}
                   </ul>
@@ -202,7 +205,10 @@ const Menu = () => {
                 <CardContent>
                   <ul className="space-y-3">
                     {nonCoffeeItems.map((item, index) => <li key={index} className="flex justify-between items-center text-sm">
-                        <span className="text-muted-foreground">{item.name}</span>
+                        <div className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                          <span className="text-muted-foreground">{item.name}</span>
+                        </div>
                         <span className="font-medium text-foreground">{item.price}</span>
                       </li>)}
                   </ul>
