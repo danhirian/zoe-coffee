@@ -25,8 +25,8 @@ const Location = () => {
 
                   </h3>
                     <p className="text-primary-foreground/70">
-                      123 Coffee Lane<br />
-                      Brooklyn, NY 11201
+                      Strada Trandafirilor 28 (Căminul cultural)   <br />
+                      Giroc    
                     </p>
                   </div>
                 </div>
