@@ -114,11 +114,7 @@ const Menu = () => {
   return <div className="min-h-screen flex flex-col bg-background relative">
       {/* Background Image */}
       <div className="fixed inset-0 z-0">
-        <img
-          src={menuBackground}
-          alt="Coffee shop background"
-          className="w-full h-full object-cover"
-        />
+        <img src={menuBackground} alt="Coffee shop background" className="w-full h-full object-cover" />
         <div className="absolute inset-0 hero-overlay" />
       </div>
       
@@ -128,10 +124,10 @@ const Menu = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4 lg:text-5xl">
+            <h1 className="font-serif text-4xl md:text-5xl font-bold mb-4 lg:text-5xl bg-primary text-primary-foreground">
               Meniu evenimente  
             </h1>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-lg max-w-2xl mx-auto text-destructive-foreground">
               Alege pachetul perfect pentru evenimentul tău. Toate prețurile sunt per persoană.
             </p>
           </div>
@@ -173,10 +169,10 @@ const Menu = () => {
           {/* Meniu Cafenea Section */}
           <div className="mt-20">
             <div className="text-center mb-12">
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-4 md:text-5xl">
+              <h2 className="font-serif text-3xl font-bold mb-4 md:text-5xl text-primary-foreground">
                 Meniu Cafenea
               </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              <p className="text-lg max-w-2xl mx-auto text-destructive-foreground">
                 Prețuri pentru comenzile la locație
               </p>
             </div>
@@ -216,7 +212,7 @@ const Menu = () => {
 
           {/* CTA Section */}
           <div className="mt-16 text-center">
-            <p className="text-muted-foreground mb-4">
+            <p className="mb-4 text-primary-foreground">
               Vrei să afli mai multe despre serviciile noastre pentru evenimente?
             </p>
             <a href="#location" className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90">
