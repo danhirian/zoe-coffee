@@ -4,6 +4,7 @@ import FeaturedDrinks from "@/components/FeaturedDrinks";
 import Story from "@/components/Story";
 import Location from "@/components/Location";
 import Footer from "@/components/Footer";
+import BeagleCompanion from "@/components/BeagleCompanion";
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <Story />
       <Location />
       <Footer />
+      <BeagleCompanion />
     </div>
   );
 };
