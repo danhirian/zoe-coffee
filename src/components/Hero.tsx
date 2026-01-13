@@ -20,10 +20,10 @@ const Hero = () => {
             Creată cu
             <span className="block text-caramel">pasiune și grijă</span>
           </h1>
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Coffee className="h-5 w-5 text-caramel animate-pulse" />
-            <Sparkles className="h-4 w-4 text-cream/60" />
-            <Coffee className="h-5 w-5 text-caramel animate-pulse" />
+          <div className="flex items-center justify-center gap-6 mb-6">
+            <Coffee className="h-12 w-12 text-caramel animate-pulse" />
+            <Sparkles className="h-8 w-8 text-cream/60" />
+            <Coffee className="h-12 w-12 text-caramel animate-pulse" />
           </div>
           <p className="text-cream/70 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
             Fiecare ceașcă spune o poveste. De la boabele atent selecționate, până la prăjirea făcută cu măiestrie, transformăm cafeaua într-o experiență autentică, savurată pe îndelete.
