@@ -18,7 +18,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
+          <a href="/" className="flex items-center gap-2 group">
             <img alt="Zoe Coffee" className="h-[120px] w-[120px] object-contain transition-transform group-hover:scale-105 border-secondary-foreground" src="/lovable-uploads/eba40f59-5077-45b8-a2a2-a2c8401d5dc5.png" />
           </a>
 
