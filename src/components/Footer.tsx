@@ -1,4 +1,5 @@
-import { Coffee, Instagram, Facebook, Twitter } from "lucide-react";
+import { Instagram, Facebook, Twitter } from "lucide-react";
+import zoeLogo from "@/assets/zoe-coffee-logo.jpg";
 
 const Footer = () => {
   return (
@@ -8,10 +9,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             {/* Logo */}
             <a href="#" className="flex items-center gap-2 group">
-              <Coffee className="h-6 w-6 text-accent transition-transform group-hover:rotate-12" />
-              <span className="font-serif text-xl font-semibold text-foreground">
-                The Roast
-              </span>
+              <img src={zoeLogo} alt="Zoe Coffee" className="h-14 w-14 object-contain transition-transform group-hover:scale-105" />
             </a>
 
             {/* Social Links */}
@@ -40,10 +38,9 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Copyright */}
           <div className="mt-8 pt-8 border-t border-border text-center">
             <p className="text-muted-foreground text-sm">
-              © {new Date().getFullYear()} The Roast Coffee. Crafted with ☕ in Brooklyn.
+              © {new Date().getFullYear()} Zoe Coffee. Crafted with ☕ in Brooklyn.
             </p>
           </div>
         </div>

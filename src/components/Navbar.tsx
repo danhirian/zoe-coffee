@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Coffee } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import zoeLogo from "@/assets/zoe-coffee-logo.jpg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,10 +18,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            <Coffee className="h-7 w-7 text-accent transition-transform group-hover:rotate-12" />
-            <span className="font-serif text-xl md:text-2xl font-semibold text-foreground">
-              The Roast
-            </span>
+            <img src={zoeLogo} alt="Zoe Coffee" className="h-12 w-12 object-contain transition-transform group-hover:scale-105" />
           </a>
 
           {/* Desktop Navigation */}
