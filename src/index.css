@@ -4,6 +4,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap');
 
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Cascadia+Code&display=swap");
+
 @layer base {
   :root {
     /* Warm coffee palette */
@@ -21,16 +25,16 @@
     --primary-foreground: 35 30% 95%;
 
     /* Warm cream secondary */
-    --secondary: 35 30% 90%;
-    --secondary-foreground: 25 35% 22%;
+    --secondary: 26 90.4762% 37.0588%;
+    --secondary-foreground: 0 0% 0%;
 
     /* Muted warm tones */
     --muted: 30 15% 88%;
     --muted-foreground: 25 15% 45%;
 
     /* Caramel accent */
-    --accent: 28 70% 45%;
-    --accent-foreground: 35 30% 98%;
+    --accent: 0 0% 0%;
+    --accent-foreground: 0 74.6835% 15.4902%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -54,7 +58,7 @@
     --gradient-card: linear-gradient(145deg, hsl(35 30% 95%) 0%, hsl(30 20% 92%) 100%);
 
     /* Typography */
-    --font-serif: 'Playfair Display', serif;
+    --font-serif: Merriweather, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
     --font-sans: 'Source Sans 3', sans-serif;
 
     /* Shadows */
@@ -70,6 +74,7 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --font-mono: "Cascadia Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   }
 
   .dark {
@@ -106,6 +111,8 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --font-serif: Merriweather, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+    --font-mono: "Cascadia Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   }
 }
 
