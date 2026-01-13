@@ -2,17 +2,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-coffee.jpg";
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Artisanal coffee shop interior"
-          className="w-full h-full object-cover"
-        />
+        <img src={heroImage} alt="Artisanal coffee shop interior" className="w-full h-full object-cover" />
         <div className="absolute inset-0 hero-overlay" />
       </div>
 
@@ -20,7 +14,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-3xl mx-auto animate-fade-up">
           <p className="text-cream/80 text-sm md:text-base uppercase tracking-[0.3em] mb-6 font-medium">
-            Artisan Coffee Since 2015
+            Cafea artizanală din 2025
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-cream mb-6 leading-tight">
             Crafted with
@@ -50,8 +44,6 @@ const Hero = () => {
           <div className="w-1.5 h-3 bg-cream/50 rounded-full mt-2 animate-pulse" />
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
