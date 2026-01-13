@@ -7,7 +7,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             {/* Logo */}
             <a href="#" className="flex items-center gap-2 group">
-              <img alt="Zoe Coffee" className="h-14 w-14 object-contain transition-transform group-hover:scale-105" src="/lovable-uploads/f2e7ee10-0944-47d5-b3aa-c9532a84b516.png" />
+              <img alt="Zoe Coffee" className="w-[120px] h-[120px] object-contain transition-transform group-hover:scale-105" src="/lovable-uploads/f2e7ee10-0944-47d5-b3aa-c9532a84b516.png" />
             </a>
 
             {/* Social Links */}
