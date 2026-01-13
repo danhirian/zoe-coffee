@@ -9,7 +9,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Meniu", href: "/menu" },
     { name: "Povestea noastră", href: "/#story" },
-    { name: "Unde ne găsiți", href: "/#location" },
+    { name: "Unde ne găsiți?", href: "/#location" },
   ];
 
   return (
