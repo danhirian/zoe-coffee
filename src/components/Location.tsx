@@ -21,7 +21,9 @@ const Location = () => {
                     <MapPin className="w-6 h-6 text-caramel" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Location</h3>
+                    <h3 className="font-semibold mb-1">Locație
+
+                  </h3>
                     <p className="text-primary-foreground/70">
                       123 Coffee Lane<br />
                       Brooklyn, NY 11201
