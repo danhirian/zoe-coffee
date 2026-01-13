@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Coffee, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-coffee.jpg";
-import zoeTitleLogo from "@/assets/zoe-coffee-title-logo.png";
 
 const Hero = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -15,14 +14,6 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-3xl mx-auto animate-fade-up">
-          {/* Title Logo */}
-          <div className="mb-6">
-            <img 
-              src={zoeTitleLogo} 
-              alt="Zoe Coffee" 
-              className="w-48 sm:w-56 md:w-64 lg:w-72 mx-auto drop-shadow-2xl"
-            />
-          </div>
           <div className="inline-flex items-center gap-3 mb-6 px-5 py-2 rounded-full bg-coffee-dark/40 backdrop-blur-sm border border-caramel/30">
             <Coffee className="h-4 w-4 text-caramel" />
             <p className="text-caramel text-sm md:text-base uppercase tracking-[0.2em] font-medium">
