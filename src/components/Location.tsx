@@ -53,8 +53,8 @@ const Location = () => {
                   <div>
                     <h3 className="font-semibold mb-1">Contact</h3>
                     <p className="text-primary-foreground/70">
-                      0748 626 596<br />
-                      cristianbalog13@yahoo.com
+                      <a href="tel:0748626596" className="hover:text-caramel transition-colors">0748 626 596</a><br />
+                      <a href="mailto:cristianbalog13@yahoo.com" className="hover:text-caramel transition-colors">cristianbalog13@yahoo.com</a>
                     </p>
                   </div>
                 </div>
