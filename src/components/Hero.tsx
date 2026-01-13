@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Coffee, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-coffee.jpg";
 const Hero = () => {
@@ -20,9 +20,13 @@ const Hero = () => {
             Creată cu
             <span className="block text-caramel">pasiune și grijă</span>
           </h1>
-          <p className="text-cream/70 text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed">
-            Every cup tells a story. From farm to cup, we source the finest beans 
-            and roast them to perfection.
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <Coffee className="h-5 w-5 text-caramel animate-pulse" />
+            <Sparkles className="h-4 w-4 text-cream/60" />
+            <Coffee className="h-5 w-5 text-caramel animate-pulse" />
+          </div>
+          <p className="text-cream/70 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+            Fiecare ceașcă spune o poveste. De la boabele atent selecționate, până la prăjirea făcută cu măiestrie, transformăm cafeaua într-o experiență autentică, savurată pe îndelete.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="xl" asChild>
