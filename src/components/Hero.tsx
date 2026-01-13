@@ -17,8 +17,8 @@ const Hero = () => {
             Cafea artizanală din 2025
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-cream mb-6 leading-tight">
-            Crafted with
-            <span className="block text-caramel">Passion & Care</span>
+            Creată cu
+            <span className="block text-caramel">pasiune și grijă</span>
           </h1>
           <p className="text-cream/70 text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed">
             Every cup tells a story. From farm to cup, we source the finest beans 
