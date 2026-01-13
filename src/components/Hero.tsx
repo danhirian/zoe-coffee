@@ -36,7 +36,7 @@ const Hero = () => {
               </Link>
             </Button>
             <Button variant="warmOutline" size="xl">
-              Our Story
+              Povestea noastră
             </Button>
           </div>
         </div>
