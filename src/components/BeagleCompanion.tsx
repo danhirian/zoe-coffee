@@ -48,11 +48,13 @@ const BeagleCompanion = () => {
       title="Click me for a new pose!"
     >
       <div className="relative">
-        <img 
-          src={currentPose.image} 
-          alt={`Beagle mascot - ${currentPose.name}`} 
-          className="w-20 h-20 md:w-24 md:h-24 drop-shadow-lg hover:scale-110 transition-transform duration-200"
-        />
+        <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-background shadow-lg overflow-hidden flex items-center justify-center hover:scale-110 transition-transform duration-200">
+          <img 
+            src={currentPose.image} 
+            alt={`Beagle mascot - ${currentPose.name}`} 
+            className="w-[90%] h-[90%] object-contain"
+          />
+        </div>
         {/* Speech bubble */}
         <div 
           className={`absolute -top-12 left-1/2 -translate-x-1/2 bg-cream text-coffee-dark text-xs px-3 py-1.5 rounded-full shadow-md whitespace-nowrap transition-all duration-300 ${
