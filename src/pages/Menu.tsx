@@ -215,7 +215,7 @@ const Menu = () => {
             <p className="mb-4 text-primary-foreground">
               Vrei să afli mai multe despre serviciile noastre pentru evenimente?
             </p>
-            <a href="#location" className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90">
+            <a href="#location" className="inline-flex items-center justify-center rounded-md px-8 py-3 text-sm font-medium shadow transition-colors border-primary-foreground text-primary-foreground bg-caramel">
               Contactează-ne
             </a>
           </div>
