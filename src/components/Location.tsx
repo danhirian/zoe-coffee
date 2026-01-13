@@ -65,17 +65,20 @@ const Location = () => {
               </Button>
             </div>
 
-            {/* Map placeholder */}
+            {/* Interactive Google Map */}
             <div className="relative">
               <div className="aspect-square lg:aspect-[4/5] rounded-2xl bg-cream/10 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <MapPin className="w-16 h-16 text-caramel mx-auto mb-4 animate-float" />
-                    <p className="text-primary-foreground/60">
-                      Interactive map coming soon
-                    </p>
-                  </div>
-                </div>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2784.8!2d21.2277!3d45.7333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sStrada%20Trandafirilor%2028%2C%20Giroc!5e0!3m2!1sen!2sro!4v1699999999999!5m2!1sen!2sro"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Zoe Coffee Location - Strada Trandafirilor 28, Giroc"
+                  className="absolute inset-0"
+                />
               </div>
             </div>
           </div>
