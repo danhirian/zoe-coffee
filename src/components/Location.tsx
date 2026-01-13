@@ -61,7 +61,17 @@ const Location = () => {
               <Button variant="hero" size="lg" asChild className="group relative overflow-hidden">
                 <a href="https://www.google.com/maps/dir/?api=1&destination=Strada+Trandafirilor+28,+Giroc,+Romania" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <span className="relative z-10">Către noi</span>
-                  <span className="relative z-10 transition-transform group-hover:translate-x-1">☕</span>
+                  <span className="relative z-10 transition-transform group-hover:translate-x-1">
+                    <span className="relative inline-block">
+                      ☕
+                      {/* Steam particles */}
+                      <span className="absolute -top-3 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        <span className="absolute w-1 h-2 bg-cream/60 rounded-full animate-steam-1" style={{ left: '-3px' }} />
+                        <span className="absolute w-1 h-2 bg-cream/50 rounded-full animate-steam-2" style={{ left: '1px' }} />
+                        <span className="absolute w-1 h-2 bg-cream/40 rounded-full animate-steam-3" style={{ left: '5px' }} />
+                      </span>
+                    </span>
+                  </span>
                   <span className="absolute inset-0 bg-gradient-to-r from-caramel/20 via-cream/10 to-caramel/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse" />
                 </a>
               </Button>
