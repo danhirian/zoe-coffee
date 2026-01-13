@@ -40,7 +40,7 @@ const Footer = () => {
 
           <div className="mt-8 pt-8 border-t border-border text-center">
             <p className="text-muted-foreground text-sm">
-              © {new Date().getFullYear()} Zoe Coffee. Crafted with ☕ in Brooklyn.
+              © 2025 Zoe Coffee. Creată cu ☕ in Timișoara.
             </p>
           </div>
         </div>
