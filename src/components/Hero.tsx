@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-coffee.jpg";
 
 const Hero = () => {
@@ -30,9 +31,11 @@ const Hero = () => {
             and roast them to perfection.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="xl">
-              View Our Menu
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button variant="hero" size="xl" asChild>
+              <Link to="/menu">
+                View Our Menu
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
             <Button variant="warmOutline" size="xl">
               Our Story
