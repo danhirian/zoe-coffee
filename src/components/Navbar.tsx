@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import zoeLogo from "@/assets/zoe-coffee-logo.jpg";
@@ -59,13 +59,10 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map(link => <a key={link.name} href={link.href} onClick={(e) => handleNavClick(e, link.href)} className="text-muted-foreground hover:text-foreground transition-colors font-medium">
+          <div className="hidden md:flex items-center gap-4">
+            {navLinks.map(link => <a key={link.name} href={link.href} onClick={(e) => handleNavClick(e, link.href)} className={buttonVariants({ variant: "default", size: "sm" })}>
                 {link.name}
               </a>)}
-            <Button variant="default" size="sm">
-              Order Now
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -76,13 +73,10 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && <div className="md:hidden pb-6 animate-fade-in">
-            <div className="flex flex-col gap-4">
-              {navLinks.map(link => <a key={link.name} href={link.href} className="text-muted-foreground hover:text-foreground transition-colors font-medium py-2" onClick={(e) => { handleNavClick(e, link.href); setIsOpen(false); }}>
+            <div className="flex flex-col gap-3">
+              {navLinks.map(link => <a key={link.name} href={link.href} className={buttonVariants({ variant: "default", className: "w-full justify-center" })} onClick={(e) => { handleNavClick(e, link.href); setIsOpen(false); }}>
                   {link.name}
                 </a>)}
-              <Button variant="default" className="w-full mt-2">
-                Order Now
-              </Button>
             </div>
           </div>}
       </div>
