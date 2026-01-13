@@ -1,11 +1,11 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Coffee } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BeagleCompanion from "@/components/BeagleCompanion";
 import menuBackground from "@/assets/menu-background.jpg";
-
 // Coffee bean decorative component
 const CoffeeBean = ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} style={style}>
@@ -122,6 +122,18 @@ const nonCoffeeItems = [{
   price: "15 LEI"
 }];
 const Menu = () => {
+  const navigate = useNavigate();
+
+  const handleContactClick = () => {
+    navigate('/#location');
+    setTimeout(() => {
+      const element = document.getElementById('location');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
   return <div className="min-h-screen flex flex-col bg-background relative">
       {/* Background Image */}
       <div className="fixed inset-0 z-0">
@@ -256,9 +268,12 @@ const Menu = () => {
             <p className="mb-4 text-primary-foreground">
               Vrei să afli mai multe despre serviciile noastre pentru evenimente?
             </p>
-            <a href="#location" className="inline-flex items-center justify-center rounded-md px-8 py-3 text-sm font-medium shadow transition-colors border-primary-foreground text-primary-foreground bg-caramel">
+            <button 
+              onClick={handleContactClick}
+              className="inline-flex items-center justify-center rounded-md px-8 py-3 text-sm font-medium shadow transition-colors border-primary-foreground text-primary-foreground bg-caramel hover:bg-caramel/90"
+            >
               Contactează-ne
-            </a>
+            </button>
           </div>
         </div>
       </main>
