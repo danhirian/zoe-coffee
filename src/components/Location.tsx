@@ -58,16 +58,17 @@ const Location = () => {
                     </p>
                   </div>
                 </div>
-            </div>
+              </div>
+
+              <Button variant="hero" size="lg" asChild>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Strada+Trandafirilor+28,+Giroc,+Romania" target="_blank" rel="noopener noreferrer">
+                  Get Directions
+                </a>
+              </Button>
             </div>
 
             {/* Interactive Google Map */}
             <div className="relative">
-              <Button variant="hero" size="lg" asChild className="mb-6 group relative overflow-hidden hover:shadow-[0_0_20px_rgba(139,90,43,0.4)] transition-all duration-300 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-caramel/20 before:to-transparent before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700">
-                <a href="https://www.google.com/maps/dir/?api=1&destination=Strada+Trandafirilor+28,+Giroc,+Romania" target="_blank" rel="noopener noreferrer">
-                  ☕ Către noi
-                </a>
-              </Button>
               <div className="aspect-square lg:aspect-[4/5] rounded-2xl bg-cream/10 overflow-hidden">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2784.8!2d21.2277!3d45.7333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sStrada%20Trandafirilor%2028%2C%20Giroc!5e0!3m2!1sen!2sro!4v1699999999999!5m2!1sen!2sro" width="100%" height="100%" style={{
                 border: 0
