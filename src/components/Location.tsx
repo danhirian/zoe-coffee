@@ -11,7 +11,7 @@ const Location = () => {
                 Vizitați-ne!
               </p>
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold mb-8 leading-tight">
-                Come Say Hello
+                Unde ne găsiți?
               </h2>
 
               <div className="space-y-6 mb-10">
