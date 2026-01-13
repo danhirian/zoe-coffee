@@ -60,8 +60,18 @@ const Location = () => {
                 </div>
               </div>
 
-              <Button variant="hero" size="lg">
-                Get Directions
+              <Button 
+                variant="hero" 
+                size="lg" 
+                asChild
+              >
+                <a 
+                  href="https://www.google.com/maps/dir/?api=1&destination=Strada+Trandafirilor+28,+Giroc,+Romania" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Get Directions
+                </a>
               </Button>
             </div>
 
