@@ -54,6 +54,39 @@ const menuTiers = [
   },
 ];
 
+// Meniu Cafenea items
+const coffeeItems = [
+  { name: "Ristretto", price: "12 LEI" },
+  { name: "Espresso", price: "12 LEI" },
+  { name: "Espresso dublu", price: "15 LEI" },
+  { name: "Espresso Macchiato", price: "13 LEI" },
+  { name: "Espresso Tonic", price: "14 LEI" },
+  { name: "Espresso Tonic caramel", price: "15 LEI" },
+  { name: "Americano", price: "12 LEI" },
+  { name: "Cappuccino", price: "17 LEI" },
+  { name: "Latte Macchiato (caramel, vanilie, cocos, ciocolată)", price: "18 LEI" },
+  { name: "Flat White", price: "20 LEI" },
+  { name: "Iced Coffee", price: "16 LEI" },
+  { name: "Vieneze Coffee", price: "18 LEI" },
+  { name: "Espresso decafeinizat", price: "12 LEI" },
+  { name: "Frappé", price: "18 LEI" },
+  { name: "Cortado", price: "15 LEI" },
+  { name: "Affogato", price: "17 LEI" },
+  { name: "Coffee Baileys", price: "20 LEI" },
+  { name: "Coffee Amaretto", price: "20 LEI" },
+  { name: "Extras sirop", price: "2 LEI" },
+];
+
+const nonCoffeeItems = [
+  { name: "Apă", price: "8 LEI" },
+  { name: "Pepsi", price: "10 LEI" },
+  { name: "Matcha Latte (cocos, banană)", price: "18 LEI" },
+  { name: "Iced Matcha Latte (mango, cocos, banană)", price: "18 LEI" },
+  { name: "Ciocolată caldă (albă/neagră)", price: "15 LEI" },
+  { name: "Ceai (mentă, fructe, negru, verde)", price: "10 LEI" },
+  { name: "Vin fierbinte", price: "15 LEI" },
+];
+
 const Menu = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -113,6 +146,54 @@ const Menu = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          {/* Meniu Cafenea Section */}
+          <div className="mt-20">
+            <div className="text-center mb-12">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Meniu Cafenea
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                Prețuri pentru comenzile la locație
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {/* Coffee */}
+              <Card className="border-border/50">
+                <CardHeader>
+                  <CardTitle className="font-serif text-2xl text-foreground">Coffee</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3">
+                    {coffeeItems.map((item, index) => (
+                      <li key={index} className="flex justify-between items-center text-sm">
+                        <span className="text-muted-foreground">{item.name}</span>
+                        <span className="font-medium text-foreground">{item.price}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+
+              {/* Non Coffee */}
+              <Card className="border-border/50">
+                <CardHeader>
+                  <CardTitle className="font-serif text-2xl text-foreground">Non Coffee</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3">
+                    {nonCoffeeItems.map((item, index) => (
+                      <li key={index} className="flex justify-between items-center text-sm">
+                        <span className="text-muted-foreground">{item.name}</span>
+                        <span className="font-medium text-foreground">{item.price}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
           </div>
 
           {/* CTA Section */}
