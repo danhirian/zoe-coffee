@@ -13,9 +13,13 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-3xl mx-auto animate-fade-up">
-          <p className="text-cream/80 text-sm md:text-base uppercase tracking-[0.3em] mb-6 font-medium">
-            Cafea artizanală din 2025
-          </p>
+          <div className="inline-flex items-center gap-3 mb-6 px-5 py-2 rounded-full bg-coffee-dark/40 backdrop-blur-sm border border-caramel/30">
+            <Coffee className="h-4 w-4 text-caramel" />
+            <p className="text-caramel text-sm md:text-base uppercase tracking-[0.2em] font-medium">
+              Cafea artizanală din 2025
+            </p>
+            <Coffee className="h-4 w-4 text-caramel" />
+          </div>
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-cream mb-6 leading-tight">
             Creată cu
             <span className="block text-caramel">pasiune și grijă</span>
