@@ -60,9 +60,11 @@ const Location = () => {
                 </div>
               </div>
 
-              <Button variant="hero" size="lg" asChild>
-                <a href="https://www.google.com/maps/dir/?api=1&destination=Strada+Trandafirilor+28,+Giroc,+Romania" target="_blank" rel="noopener noreferrer">
-                  Get Directions
+              <Button variant="hero" size="lg" asChild className="group relative overflow-hidden">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Strada+Trandafirilor+28,+Giroc,+Romania" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <span className="relative z-10">Către noi</span>
+                  <span className="relative z-10 transition-transform group-hover:translate-x-1">☕</span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-caramel/20 via-cream/10 to-caramel/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse" />
                 </a>
               </Button>
             </div>
