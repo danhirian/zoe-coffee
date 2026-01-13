@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BeagleCompanion from "@/components/BeagleCompanion";
 import menuBackground from "@/assets/menu-background.jpg";
 const standardDrinks = ["Ristretto", "Espresso", "Espresso dublu", "Espresso Macchiato", "Espresso Tonic", "Americano", "Cappuccino", "Latte Macchiato", "Flat White", "Iced Coffee", "Viennese Coffee", "Espresso decofeinizat"];
 const selectDrinks = ["Ristretto", "Espresso", "Espresso dublu", "Espresso Macchiato", "Espresso Tonic", "Espresso Tonic caramel", "Americano", "Cappuccino", "Latte Macchiato (caramel, vanilie, cocos, ciocolată)", "Flat White", "Iced Coffee", "Viennese Coffee", "Espresso decofeinizat", "Frappe", "Cortado", "Affogato", "Ceai (mentă, fructe, negru, verde)"];
@@ -223,6 +224,7 @@ const Menu = () => {
       </main>
 
       <Footer />
+      <BeagleCompanion />
     </div>;
 };
 export default Menu;
