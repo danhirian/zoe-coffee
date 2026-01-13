@@ -7,9 +7,7 @@ const Location = () => {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Info */}
             <div>
-              <p className="text-caramel text-sm uppercase tracking-[0.2em] mb-3 font-extrabold font-serif">
-                Vizitați-ne!
-              </p>
+              
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold mb-8 leading-tight">
                 Unde ne găsiți?
               </h2>
