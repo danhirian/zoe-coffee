@@ -39,8 +39,8 @@ const Location = () => {
                   <div>
                     <h3 className="font-semibold mb-1">Program</h3>
                     <p className="text-primary-foreground/70">
-                      Mon - Fri: 7am - 7pm<br />
-                      Sat - Sun: 8am - 6pm
+                      Luni - Vineri: 10AM - 6PM<br />
+                      Sâmbătă: 9AM - 5PM
                     </p>
                   </div>
                 </div>
