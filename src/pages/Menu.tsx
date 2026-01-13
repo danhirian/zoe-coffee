@@ -37,7 +37,7 @@ const menuTiers = [{
   description: "Cafea de specialitate, aparatură profesională și barista cu experiență reală.",
   drinks: premiumDrinks,
   badge: "Premium",
-  badgeVariant: "outline" as const
+  badgeVariant: "premium" as const
 }];
 
 // Meniu Cafenea items
