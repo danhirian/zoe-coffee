@@ -53,8 +53,8 @@ const Location = () => {
                   <div>
                     <h3 className="font-semibold mb-1">Contact</h3>
                     <p className="text-primary-foreground/70">
-                      (555) 123-4567<br />
-                      hello@theroast.coffee
+                      0748 626 596<br />
+                      cristianbalog13@yahoo.com
                     </p>
                   </div>
                 </div>
