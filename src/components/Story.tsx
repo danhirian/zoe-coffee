@@ -1,5 +1,5 @@
 import { Coffee, Heart, Leaf } from "lucide-react";
-
+import zoeLogo from "@/assets/zoe-coffee-logo.jpg";
 const values = [
   {
     icon: Coffee,
@@ -52,9 +52,11 @@ const Story = () => {
               <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-secondary to-muted overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center p-8">
-                    <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-accent/10 mb-6">
-                      <Coffee className="w-10 h-10 text-accent" />
-                    </div>
+                    <img 
+                      src={zoeLogo} 
+                      alt="Zoe Coffee" 
+                      className="w-32 h-32 object-contain mx-auto mb-6"
+                    />
                     <p className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-2">
                       10+
                     </p>
