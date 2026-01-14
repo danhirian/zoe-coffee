@@ -49,16 +49,12 @@ const Story = () => {
                   și sentimentul că „aici e ceva special".
                 </p>
                 
-                <div className="border-l-4 border-accent/50 pl-5 py-2 bg-accent/5 rounded-r-lg">
-                  <p className="text-foreground/90">
-                    De aceea, pentru nunți, botezuri, zile de naștere sau evenimente private, 
-                    îți recomandăm să ne rezervi din timp.
-                  </p>
-                  <p className="mt-2 text-sm">
-                    Nu pentru că suntem ocupați. Ci pentru că fiecare eveniment îl tratăm 
-                    ca pe un moment unic, construit cu atenție, stil și mult suflet.
-                  </p>
-                </div>
+                <p>
+                  De aceea, pentru nunți, botezuri, zile de naștere sau evenimente private, 
+                  îți recomandăm să ne rezervi din timp. Nu pentru că suntem ocupați. 
+                  Ci pentru că fiecare eveniment îl tratăm ca pe un moment unic, 
+                  construit cu atenție, stil și mult suflet.
+                </p>
                 
                 <div className="space-y-2 pt-2">
                   <p className="flex items-center gap-2">
