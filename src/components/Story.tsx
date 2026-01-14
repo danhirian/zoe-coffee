@@ -11,6 +11,8 @@ import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
 import gallery4 from "@/assets/gallery-4.jpg";
 import gallery5 from "@/assets/gallery-5.jpg";
+import gallery6 from "@/assets/gallery-6.jpg";
+import gallery7 from "@/assets/gallery-7.jpg";
 
 const galleryImages = [
   { src: gallery1, alt: "Espresso machine and coffee equipment" },
@@ -18,6 +20,8 @@ const galleryImages = [
   { src: gallery3, alt: "Customers at Zoe Coffee truck" },
   { src: gallery4, alt: "Zoe Coffee truck daytime view" },
   { src: gallery5, alt: "Zoe Coffee truck side view" },
+  { src: gallery6, alt: "Latte art coffee cups" },
+  { src: gallery7, alt: "Zoe Coffee espresso machine brewing" },
 ];
 
 const eventTypes = [
