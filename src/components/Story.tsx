@@ -159,21 +159,23 @@ const Story = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-coffee-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               
-              {/* Images 2-3 stacked on the right */}
-              {galleryImages.slice(1, 3).map((image, index) => (
-                <div 
-                  key={index}
-                  className="relative group overflow-hidden rounded-xl aspect-square cursor-pointer"
-                  onClick={() => openLightbox(index + 1)}
-                >
-                  <img 
-                    src={image.src} 
-                    alt={image.alt}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-coffee-dark/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-              ))}
+              {/* Images 2-3 stacked on the right - using flex to fill height */}
+              <div className="row-span-2 flex flex-col gap-4">
+                {galleryImages.slice(1, 3).map((image, index) => (
+                  <div 
+                    key={index}
+                    className="relative group overflow-hidden rounded-xl cursor-pointer flex-1"
+                    onClick={() => openLightbox(index + 1)}
+                  >
+                    <img 
+                      src={image.src} 
+                      alt={image.alt}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-coffee-dark/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                ))}
+              </div>
 
               {/* Images 4-6 in a row */}
               {galleryImages.slice(3).map((image, index) => (
