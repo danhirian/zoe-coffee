@@ -5,7 +5,7 @@ import matchaLatte from "@/assets/matcha-latte.jpg";
 const drinks = [
   {
     name: "Cappuccino",
-    description: "Lapte cremos aburit cu espresso de casă, decorat cu artă latte rafinată.",
+    description: "Crema de lapte cu espresso de casă, decorat cu artă latte rafinată.",
     image: cappuccino,
   },
   {
