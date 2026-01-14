@@ -1,25 +1,22 @@
-import latteArt from "@/assets/latte-art.jpg";
-import coldBrew from "@/assets/cold-brew.jpg";
-import espresso from "@/assets/espresso.jpg";
+import cappuccino from "@/assets/cappuccino.jpg";
+import latteMacchiato from "@/assets/latte-macchiato.jpg";
+import matchaLatte from "@/assets/matcha-latte.jpg";
 
 const drinks = [
   {
-    name: "Signature Latte",
+    name: "Cappuccino",
     description: "Velvety steamed milk with our house espresso, topped with intricate latte art.",
-    price: "$5.50",
-    image: latteArt,
+    image: cappuccino,
   },
   {
-    name: "Cold Brew",
-    description: "Slow-steeped for 18 hours, smooth and rich with notes of chocolate and caramel.",
-    price: "$4.75",
-    image: coldBrew,
+    name: "Latte Macchiato",
+    description: "Layered espresso and steamed milk, smooth and rich with a beautiful gradient.",
+    image: latteMacchiato,
   },
   {
-    name: "Single Origin Espresso",
-    description: "Bold and nuanced, featuring rotating beans from award-winning farms.",
-    price: "$3.50",
-    image: espresso,
+    name: "Matcha Latte",
+    description: "Premium Japanese matcha blended with creamy steamed milk for a vibrant, earthy taste.",
+    image: matchaLatte,
   },
 ];
 
@@ -59,14 +56,9 @@ const FeaturedDrinks = () => {
               
               {/* Content */}
               <div className="p-6">
-                <div className="flex items-start justify-between mb-3">
-                  <h3 className="font-serif text-xl font-semibold text-foreground">
-                    {drink.name}
-                  </h3>
-                  <span className="text-accent font-semibold text-lg">
-                    {drink.price}
-                  </span>
-                </div>
+                <h3 className="font-serif text-xl font-semibold text-foreground mb-3">
+                  {drink.name}
+                </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {drink.description}
                 </p>
