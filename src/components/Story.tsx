@@ -24,31 +24,65 @@ const Story = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Main Story */}
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
-            <div>
-              <p className="text-accent text-sm uppercase tracking-[0.2em] mb-3 font-medium">
-                Our Story
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-20">
+            <div className="space-y-6">
+              <p className="text-accent text-sm uppercase tracking-[0.2em] font-medium">
+                Povestea Noastră
               </p>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-                A Love Letter to
-                <span className="text-accent"> Great Coffee</span>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                Mai mult decât
+                <span className="text-accent"> o cafea</span>
               </h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  What started as a dream between two friends in 2015 has grown into 
-                  something truly special. We believe that coffee is more than just a 
-                  drink—it's a ritual, a moment of peace, a connection.
+              
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
+                <p className="text-lg font-medium text-foreground/90 italic">
+                  Sunt momente care merită mai mult decât o cafea bună. Merită o experiență.
                 </p>
+                
                 <p>
-                  We travel the world to find the most exceptional beans, build 
-                  relationships with farmers who share our values, and roast everything 
-                  in small batches right here in our shop.
+                  <span className="font-semibold text-foreground">Zoe Coffee</span> nu este doar un coffee truck. 
+                  Este acel colț care adună oamenii, zâmbetele și poveștile la un loc.
+                </p>
+                
+                <p>
+                  Este mirosul de cafea proaspăt măcinată, lumina caldă, detaliile făcute cu grijă 
+                  și sentimentul că „aici e ceva special".
+                </p>
+                
+                <div className="border-l-4 border-accent/50 pl-5 py-2 bg-accent/5 rounded-r-lg">
+                  <p className="text-foreground/90">
+                    De aceea, pentru nunți, botezuri, zile de naștere sau evenimente private, 
+                    îți recomandăm să ne rezervi din timp.
+                  </p>
+                  <p className="mt-2 text-sm">
+                    Nu pentru că suntem ocupați. Ci pentru că fiecare eveniment îl tratăm 
+                    ca pe un moment unic, construit cu atenție, stil și mult suflet.
+                  </p>
+                </div>
+                
+                <div className="space-y-2 pt-2">
+                  <p className="flex items-center gap-2">
+                    <span className="text-accent">♥</span>
+                    Ne place să fim parte din amintirile tale.
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <span className="text-accent">♥</span>
+                    Ne place să arate bine.
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <span className="text-accent">♥</span>
+                    Ne place să se simtă bine.
+                  </p>
+                </div>
+                
+                <p className="text-foreground font-medium italic border-t border-border/50 pt-5">
+                  Și mai ales, ne place să rămână în sufletul oamenilor mult după ultima ceașcă de cafea.
                 </p>
               </div>
             </div>
 
             {/* Decorative Element */}
-            <div className="relative">
+            <div className="relative lg:sticky lg:top-24">
               <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-secondary to-muted overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center p-8">
@@ -58,9 +92,9 @@ const Story = () => {
                       className="w-32 h-32 object-contain mx-auto mb-6"
                     />
                     <p className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-2">
-                      10+
+                      ∞
                     </p>
-                    <p className="text-muted-foreground">Years of Passion</p>
+                    <p className="text-muted-foreground">Momente Speciale</p>
                   </div>
                 </div>
               </div>
