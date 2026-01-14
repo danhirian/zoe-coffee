@@ -91,32 +91,29 @@ const Story = () => {
     
     const eventTypeLabel = eventTypes.find(t => t.value === formData.eventType)?.label || formData.eventType;
     
-    const subject = `Cerere Rezervare Zoe Coffee - ${eventTypeLabel}`;
-    const body = `Bună ziua,
+    const message = `🐕 *Cerere Rezervare Zoe Coffee*
 
-Am dori să facem o rezervare pentru un eveniment.
-
-DETALII CLIENT:
+*DETALII CLIENT:*
 • Nume: ${formData.name}
 • Email: ${formData.email}
 • Telefon: ${formData.phone}
 
-DETALII EVENIMENT:
+*DETALII EVENIMENT:*
 • Tip eveniment: ${eventTypeLabel}
 • Data: ${formData.eventDate}
 • Număr invitați: ${formData.guests || 'Nespecificat'}
 
-MESAJ ADIȚIONAL:
-${formData.message || 'Niciun mesaj adițional.'}
+*MESAJ ADIȚIONAL:*
+${formData.message || 'Niciun mesaj adițional.'}`;
 
-Vă mulțumesc!`;
-
-    const mailtoLink = `mailto:cristianbalog13@yahoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
+    // Romanian phone number converted to international format (40 = Romania country code)
+    const whatsappNumber = "40748626596";
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappLink, '_blank');
 
     toast({
-      title: "Se deschide aplicația de email...",
-      description: "Trimite emailul pentru a finaliza cererea de rezervare.",
+      title: "Se deschide WhatsApp...",
+      description: "Trimite mesajul pentru a finaliza cererea de rezervare.",
     });
   };
 
