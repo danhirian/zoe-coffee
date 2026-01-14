@@ -1,21 +1,16 @@
-import { Coffee, Heart, Leaf } from "lucide-react";
 import zoeVideo from "@/assets/zoe-coffee-video.mp4";
-const values = [
-  {
-    icon: Coffee,
-    title: "Quality First",
-    description: "We source only the top 1% of specialty-grade beans from sustainable farms.",
-  },
-  {
-    icon: Heart,
-    title: "Made with Love",
-    description: "Every drink is crafted by passionate baristas who care about your experience.",
-  },
-  {
-    icon: Leaf,
-    title: "Sustainability",
-    description: "From compostable cups to carbon-neutral shipping, we're committed to the planet.",
-  },
+import gallery1 from "@/assets/gallery-1.jpg";
+import gallery2 from "@/assets/gallery-2.jpg";
+import gallery3 from "@/assets/gallery-3.jpg";
+import gallery4 from "@/assets/gallery-4.jpg";
+import gallery5 from "@/assets/gallery-5.jpg";
+
+const galleryImages = [
+  { src: gallery1, alt: "Espresso machine and coffee equipment" },
+  { src: gallery2, alt: "Zoe Coffee truck at night" },
+  { src: gallery3, alt: "Customers at Zoe Coffee truck" },
+  { src: gallery4, alt: "Zoe Coffee truck daytime view" },
+  { src: gallery5, alt: "Zoe Coffee truck side view" },
 ];
 
 const Story = () => {
@@ -94,24 +89,37 @@ const Story = () => {
             </div>
           </div>
 
-          {/* Values */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {values.map((value, index) => (
-              <div
-                key={value.title}
-                className="text-center p-8 rounded-2xl bg-secondary/50 hover:bg-secondary transition-colors duration-300"
-              >
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-accent/10 mb-5">
-                  <value.icon className="w-7 h-7 text-accent" />
-                </div>
-                <h3 className="font-serif text-xl font-semibold text-foreground mb-3">
-                  {value.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {value.description}
-                </p>
+          {/* Gallery */}
+          <div className="space-y-4">
+            <h3 className="font-serif text-2xl font-semibold text-foreground text-center mb-8">
+              Galerie
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {/* Large featured image */}
+              <div className="col-span-2 row-span-2 relative group overflow-hidden rounded-2xl">
+                <img 
+                  src={galleryImages[0].src} 
+                  alt={galleryImages[0].alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-coffee-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-            ))}
+              
+              {/* Smaller images */}
+              {galleryImages.slice(1).map((image, index) => (
+                <div 
+                  key={index}
+                  className="relative group overflow-hidden rounded-xl aspect-square"
+                >
+                  <img 
+                    src={image.src} 
+                    alt={image.alt}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-coffee-dark/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
