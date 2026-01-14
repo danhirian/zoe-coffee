@@ -215,8 +215,8 @@ ${formData.message || 'Niciun mesaj adițional.'}`;
                 <div className="absolute inset-0 bg-gradient-to-t from-coffee-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               
-              {/* Smaller images */}
-              {galleryImages.slice(1).map((image, index) => (
+              {/* Images 2-3 stacked on the right */}
+              {galleryImages.slice(1, 3).map((image, index) => (
                 <div 
                   key={index}
                   className="relative group overflow-hidden rounded-xl aspect-square cursor-pointer"
@@ -230,6 +230,35 @@ ${formData.message || 'Niciun mesaj adițional.'}`;
                   <div className="absolute inset-0 bg-gradient-to-t from-coffee-dark/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               ))}
+
+              {/* Images 4-6 in a row */}
+              {galleryImages.slice(3, 6).map((image, index) => (
+                <div 
+                  key={index + 3}
+                  className="relative group overflow-hidden rounded-xl aspect-square cursor-pointer"
+                  onClick={() => openLightbox(index + 3)}
+                >
+                  <img 
+                    src={image.src} 
+                    alt={image.alt}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-coffee-dark/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              ))}
+
+              {/* Last image spanning 2 columns for balance */}
+              <div 
+                className="col-span-2 md:col-span-1 relative group overflow-hidden rounded-xl aspect-[2/1] md:aspect-square cursor-pointer"
+                onClick={() => openLightbox(6)}
+              >
+                <img 
+                  src={galleryImages[6].src} 
+                  alt={galleryImages[6].alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-coffee-dark/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
             </div>
           </div>
 
