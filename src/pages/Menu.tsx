@@ -8,6 +8,7 @@ import BeagleCompanion from "@/components/BeagleCompanion";
 import menuBackground from "@/assets/menu-background.jpg";
 import menuVideo from "@/assets/menu-video.mp4";
 import menuVideo2 from "@/assets/menu-video-2.mp4";
+import menuVideo3 from "@/assets/menu-video-3.mp4";
 // Coffee bean decorative component
 const CoffeeBean = ({
   className,
@@ -201,44 +202,42 @@ const Menu = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {menuTiers.map((tier, tierIndex) => (
               <Card key={tier.name} className="relative overflow-hidden border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
-                {/* Video background for Standard and Select menus */}
-                {(tierIndex === 0 || tierIndex === 1) && (
-                  <div className="absolute inset-0 z-0">
-                    <video
-                      src={tierIndex === 0 ? menuVideo : menuVideo2}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/60" />
-                  </div>
-                )}
-                <CardHeader className={`pb-4 relative z-10 ${tierIndex === 0 || tierIndex === 1 ? 'text-white' : ''}`}>
+                {/* Video background for all menu cards */}
+                <div className="absolute inset-0 z-0">
+                  <video
+                    src={tierIndex === 0 ? menuVideo : tierIndex === 1 ? menuVideo2 : menuVideo3}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/60" />
+                </div>
+                <CardHeader className="pb-4 relative z-10 text-white">
                   <div className="flex items-start justify-between">
                     <div>
-                      <CardTitle className={`font-serif text-2xl ${tierIndex === 0 || tierIndex === 1 ? 'text-white' : 'text-foreground'}`}>
+                      <CardTitle className="font-serif text-2xl text-white">
                         {tier.name}
                       </CardTitle>
                       <div className="mt-2">
-                        <span className={`text-3xl font-bold ${tierIndex === 0 || tierIndex === 1 ? 'text-caramel' : 'text-primary'}`}>{tier.price}</span>
-                        <span className={`ml-1 ${tierIndex === 0 || tierIndex === 1 ? 'text-white/80' : 'text-black'}`}>€/persoană</span>
+                        <span className="text-3xl font-bold text-caramel">{tier.price}</span>
+                        <span className="ml-1 text-white/80">€/persoană</span>
                       </div>
                     </div>
                     <Badge variant={tier.badgeVariant}>{tier.badge}</Badge>
                   </div>
-                  <CardDescription className={`mt-3 text-sm ${tierIndex === 0 || tierIndex === 1 ? 'text-white/80' : ''}`}>
+                  <CardDescription className="mt-3 text-sm text-white/80">
                     {tier.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className={`relative z-10 ${tierIndex === 0 || tierIndex === 1 ? 'text-white' : ''}`}>
+                <CardContent className="relative z-10 text-white">
                   <div className="space-y-2">
-                    <h4 className={`font-medium mb-3 ${tierIndex === 0 || tierIndex === 1 ? 'text-white' : 'text-foreground'}`}>Băuturi incluse:</h4>
+                    <h4 className="font-medium mb-3 text-white">Băuturi incluse:</h4>
                     <ul className="grid grid-cols-1 gap-2">
                       {tier.drinks.map((drink, index) => (
-                        <li key={index} className={`flex items-center gap-2 text-sm ${tierIndex === 0 || tierIndex === 1 ? 'text-white/90' : 'text-black'}`}>
-                          <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${tierIndex === 0 || tierIndex === 1 ? 'bg-caramel' : 'bg-primary'}`} />
+                        <li key={index} className="flex items-center gap-2 text-sm text-white/90">
+                          <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-caramel" />
                           {drink}
                         </li>
                       ))}
