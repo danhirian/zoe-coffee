@@ -27,13 +27,13 @@ const FeaturedDrinks = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <p className="text-accent text-sm uppercase tracking-[0.2em] mb-3 font-medium">
-            Our Favorites
+            Preferatele Noastre
           </p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Featured Drinks
+            Băuturi Recomandate
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Handcrafted beverages made with love and the finest ingredients
+            Băuturi artizanale preparate cu dragoste și cele mai fine ingrediente
           </p>
         </div>
 
