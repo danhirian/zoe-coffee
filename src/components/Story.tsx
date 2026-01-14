@@ -1,5 +1,5 @@
 import { Coffee, Heart, Leaf } from "lucide-react";
-import zoeLogo from "@/assets/zoe-coffee-logo.jpg";
+import zoeVideo from "@/assets/zoe-coffee-video.mp4";
 const values = [
   {
     icon: Coffee,
@@ -77,22 +77,17 @@ const Story = () => {
               </div>
             </div>
 
-            {/* Decorative Element */}
+            {/* Video Element */}
             <div className="relative lg:sticky lg:top-24">
-              <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-secondary to-muted overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <img 
-                      src={zoeLogo} 
-                      alt="Zoe Coffee" 
-                      className="w-32 h-32 object-contain mx-auto mb-6"
-                    />
-                    <p className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-2">
-                      ∞
-                    </p>
-                    <p className="text-muted-foreground">Momente Speciale</p>
-                  </div>
-                </div>
+              <div className="aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl">
+                <video 
+                  src={zoeVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
               </div>
               {/* Floating accent */}
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-accent/10 rounded-full blur-2xl" />
