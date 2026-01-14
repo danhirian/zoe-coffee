@@ -34,29 +34,29 @@ const Story = () => {
                 <span className="text-accent"> o cafea</span>
               </h2>
               
-              <div className="space-y-5 text-muted-foreground leading-relaxed">
-                <p className="text-lg font-medium text-foreground/90 italic">
+              <div className="space-y-5 leading-relaxed">
+                <p className="text-lg font-medium text-coffee-dark italic">
                   Sunt momente care merită mai mult decât o cafea bună. Merită o experiență.
                 </p>
                 
-                <p>
+                <p className="text-foreground/80">
                   <span className="font-semibold text-foreground">Zoe Coffee</span> nu este doar un coffee truck. 
                   Este acel colț care adună oamenii, zâmbetele și poveștile la un loc.
                 </p>
                 
-                <p>
+                <p className="text-foreground/80">
                   Este mirosul de cafea proaspăt măcinată, lumina caldă, detaliile făcute cu grijă 
                   și sentimentul că „aici e ceva special".
                 </p>
                 
-                <p>
+                <p className="text-foreground/80">
                   De aceea, pentru nunți, botezuri, zile de naștere sau evenimente private, 
                   îți recomandăm să ne rezervi din timp. Nu pentru că suntem ocupați. 
                   Ci pentru că fiecare eveniment îl tratăm ca pe un moment unic, 
                   construit cu atenție, stil și mult suflet.
                 </p>
                 
-                <div className="space-y-2 pt-2">
+                <div className="space-y-2 pt-2 text-foreground/85">
                   <p className="flex items-center gap-2">
                     <span className="text-accent">♥</span>
                     Ne place să fim parte din amintirile tale.
@@ -71,7 +71,7 @@ const Story = () => {
                   </p>
                 </div>
                 
-                <p className="text-foreground font-medium italic border-t border-border/50 pt-5">
+                <p className="text-coffee-dark font-medium italic border-t border-accent/20 pt-5">
                   Și mai ales, ne place să rămână în sufletul oamenilor mult după ultima ceașcă de cafea.
                 </p>
               </div>
