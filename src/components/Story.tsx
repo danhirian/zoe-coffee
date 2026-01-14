@@ -14,11 +14,11 @@ import gallery5 from "@/assets/gallery-5.jpg";
 import gallery7 from "@/assets/gallery-7.jpg";
 
 const galleryImages = [
+  { src: gallery5, alt: "Zoe Coffee truck side view" },
   { src: gallery1, alt: "Espresso machine and coffee equipment" },
   { src: gallery2, alt: "Zoe Coffee truck at night" },
   { src: gallery3, alt: "Customers at Zoe Coffee truck" },
   { src: gallery4, alt: "Zoe Coffee truck daytime view" },
-  { src: gallery5, alt: "Zoe Coffee truck side view" },
   { src: gallery7, alt: "Zoe Coffee espresso machine brewing" },
 ];
 
