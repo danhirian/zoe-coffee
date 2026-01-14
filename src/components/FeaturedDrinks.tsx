@@ -5,17 +5,17 @@ import matchaLatte from "@/assets/matcha-latte.jpg";
 const drinks = [
   {
     name: "Cappuccino",
-    description: "Velvety steamed milk with our house espresso, topped with intricate latte art.",
+    description: "Lapte cremos aburit cu espresso de casă, decorat cu artă latte rafinată.",
     image: cappuccino,
   },
   {
     name: "Latte Macchiato",
-    description: "Layered espresso and steamed milk, smooth and rich with a beautiful gradient.",
+    description: "Espresso și lapte aburit în straturi, cremos și bogat cu un gradient frumos.",
     image: latteMacchiato,
   },
   {
     name: "Matcha Latte",
-    description: "Premium Japanese matcha blended with creamy steamed milk for a vibrant, earthy taste.",
+    description: "Matcha japoneză premium combinată cu lapte cremos aburit pentru un gust vibrant și pământesc.",
     image: matchaLatte,
   },
 ];
