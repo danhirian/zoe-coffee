@@ -7,6 +7,9 @@ import gallery3 from "@/assets/gallery-3.jpg";
 import gallery4 from "@/assets/gallery-4.jpg";
 import gallery5 from "@/assets/gallery-5.jpg";
 import gallery7 from "@/assets/gallery-7.jpg";
+import gallery8 from "@/assets/gallery-8.jpg";
+import gallery9 from "@/assets/gallery-9.jpg";
+import gallery10 from "@/assets/gallery-10.jpg";
 
 const galleryImages = [
   { src: gallery5, alt: "Zoe Coffee truck side view" },
@@ -15,6 +18,9 @@ const galleryImages = [
   { src: gallery3, alt: "Customers at Zoe Coffee truck" },
   { src: gallery4, alt: "Zoe Coffee truck daytime view" },
   { src: gallery7, alt: "Zoe Coffee espresso machine brewing" },
+  { src: gallery8, alt: "Barista holding Zoe the beagle at coffee truck" },
+  { src: gallery9, alt: "Zoe Coffee truck full view with branding" },
+  { src: gallery10, alt: "Coffee cups and equipment detail" },
 ];
 
 const Story = () => {
