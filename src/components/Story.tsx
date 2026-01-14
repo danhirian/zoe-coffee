@@ -1,10 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
-import { X, ChevronLeft, ChevronRight, Send, Calendar, Users, Mail, Phone, User } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useToast } from "@/hooks/use-toast";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import zoeVideo from "@/assets/zoe-coffee-video.mp4";
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
@@ -22,29 +17,9 @@ const galleryImages = [
   { src: gallery7, alt: "Zoe Coffee espresso machine brewing" },
 ];
 
-const eventTypes = [
-  { value: "nunta", label: "Nuntă" },
-  { value: "botez", label: "Botez" },
-  { value: "zi-nastere", label: "Zi de Naștere" },
-  { value: "corporate", label: "Eveniment Corporate" },
-  { value: "privat", label: "Eveniment Privat" },
-  { value: "altele", label: "Altele" },
-];
-
 const Story = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const { toast } = useToast();
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    eventType: "",
-    eventDate: "",
-    guests: "",
-    message: "",
-  });
 
   const openLightbox = (index: number) => {
     setCurrentIndex(index);
@@ -83,41 +58,6 @@ const Story = () => {
     };
   }, [lightboxOpen]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    const eventTypeLabel = eventTypes.find(t => t.value === formData.eventType)?.label || formData.eventType;
-    
-    const message = `🐕 *Cerere Rezervare Zoe Coffee*
-
-*DETALII CLIENT:*
-• Nume: ${formData.name}
-• Email: ${formData.email}
-• Telefon: ${formData.phone}
-
-*DETALII EVENIMENT:*
-• Tip eveniment: ${eventTypeLabel}
-• Data: ${formData.eventDate}
-• Număr invitați: ${formData.guests || 'Nespecificat'}
-
-*MESAJ ADIȚIONAL:*
-${formData.message || 'Niciun mesaj adițional.'}`;
-
-    // Romanian phone number converted to international format (40 = Romania country code)
-    const whatsappNumber = "40748626596";
-    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappLink, '_blank');
-
-    toast({
-      title: "Se deschide WhatsApp...",
-      description: "Trimite mesajul pentru a finaliza cererea de rezervare.",
-    });
-  };
 
   return (
     <section id="story" className="py-20 md:py-28 bg-secondary/30">
@@ -246,166 +186,8 @@ ${formData.message || 'Niciun mesaj adițional.'}`;
               ))}
             </div>
           </div>
-
-          {/* Reservation Form */}
-          <div id="rezervare" className="scroll-mt-24">
-            <div className="text-center mb-12">
-              <p className="text-accent text-sm uppercase tracking-[0.2em] font-medium mb-3">
-                Rezervări Evenimente
-              </p>
-              <h3 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Hai să creăm amintiri împreună
-              </h3>
-              <p className="text-foreground/70 max-w-2xl mx-auto">
-                Completează formularul de mai jos și te vom contacta pentru a discuta toate detaliile 
-                evenimentului tău special.
-              </p>
-            </div>
-
-            <form onSubmit={handleSubmit} className="max-w-3xl mx-auto">
-              <div className="bg-card rounded-3xl p-8 md:p-10 shadow-lg border border-border/50">
-                <div className="grid md:grid-cols-2 gap-6">
-                  {/* Name */}
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                      <User className="w-4 h-4 text-accent" />
-                      Nume complet
-                    </label>
-                    <Input
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder="Ion Popescu"
-                      required
-                      className="bg-background border-border/50 focus:border-accent"
-                    />
-                  </div>
-
-                  {/* Email */}
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                      <Mail className="w-4 h-4 text-accent" />
-                      Email
-                    </label>
-                    <Input
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="email@exemplu.ro"
-                      required
-                      className="bg-background border-border/50 focus:border-accent"
-                    />
-                  </div>
-
-                  {/* Phone */}
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                      <Phone className="w-4 h-4 text-accent" />
-                      Telefon
-                    </label>
-                    <Input
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="0712 345 678"
-                      required
-                      className="bg-background border-border/50 focus:border-accent"
-                    />
-                  </div>
-
-                  {/* Event Type */}
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                      <Calendar className="w-4 h-4 text-accent" />
-                      Tip eveniment
-                    </label>
-                    <Select
-                      value={formData.eventType}
-                      onValueChange={(value) => setFormData((prev) => ({ ...prev, eventType: value }))}
-                    >
-                      <SelectTrigger className="bg-background border-border/50 focus:border-accent">
-                        <SelectValue placeholder="Selectează tipul" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {eventTypes.map((type) => (
-                          <SelectItem key={type.value} value={type.value}>
-                            {type.label}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  {/* Event Date */}
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                      <Calendar className="w-4 h-4 text-accent" />
-                      Data evenimentului
-                    </label>
-                    <Input
-                      name="eventDate"
-                      type="date"
-                      value={formData.eventDate}
-                      onChange={handleInputChange}
-                      required
-                      className="bg-background border-border/50 focus:border-accent"
-                    />
-                  </div>
-
-                  {/* Number of Guests */}
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                      <Users className="w-4 h-4 text-accent" />
-                      Număr aproximativ invitați
-                    </label>
-                    <Input
-                      name="guests"
-                      type="number"
-                      value={formData.guests}
-                      onChange={handleInputChange}
-                      placeholder="ex: 100"
-                      min="1"
-                      className="bg-background border-border/50 focus:border-accent"
-                    />
-                  </div>
-
-                  {/* Message */}
-                  <div className="space-y-2 md:col-span-2">
-                    <label className="text-sm font-medium text-foreground">
-                      Detalii suplimentare
-                    </label>
-                    <Textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Spune-ne mai multe despre evenimentul tău, locație, preferințe speciale..."
-                      rows={4}
-                      className="bg-background border-border/50 focus:border-accent resize-none"
-                    />
-                  </div>
-                </div>
-
-                <div className="mt-8 text-center">
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="bg-accent hover:bg-accent/90 text-accent-foreground px-10 py-6 text-base font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    <Send className="w-5 h-5 mr-2" />
-                    Trimite Cererea
-                  </Button>
-                  <p className="text-muted-foreground text-sm mt-4">
-                    Te vom contacta în cel mult 24 de ore.
-                  </p>
-                </div>
-              </div>
-            </form>
-          </div>
         </div>
       </div>
-
       {/* Lightbox Modal */}
       {lightboxOpen && (
         <div 
