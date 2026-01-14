@@ -32,7 +32,6 @@ const eventTypes = [
 const Story = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const [formData, setFormData] = useState({
@@ -87,28 +86,38 @@ const Story = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    
+    const eventTypeLabel = eventTypes.find(t => t.value === formData.eventType)?.label || formData.eventType;
+    
+    const subject = `Cerere Rezervare Zoe Coffee - ${eventTypeLabel}`;
+    const body = `Bună ziua,
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+Am dori să facem o rezervare pentru un eveniment.
+
+DETALII CLIENT:
+• Nume: ${formData.name}
+• Email: ${formData.email}
+• Telefon: ${formData.phone}
+
+DETALII EVENIMENT:
+• Tip eveniment: ${eventTypeLabel}
+• Data: ${formData.eventDate}
+• Număr invitați: ${formData.guests || 'Nespecificat'}
+
+MESAJ ADIȚIONAL:
+${formData.message || 'Niciun mesaj adițional.'}
+
+Vă mulțumesc!`;
+
+    const mailtoLink = `mailto:cristianbalog13@yahoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
 
     toast({
-      title: "Cerere trimisă cu succes!",
-      description: "Te vom contacta în curând pentru a discuta detaliile evenimentului.",
+      title: "Se deschide aplicația de email...",
+      description: "Trimite emailul pentru a finaliza cererea de rezervare.",
     });
-
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      eventType: "",
-      eventDate: "",
-      guests: "",
-      message: "",
-    });
-    setIsSubmitting(false);
   };
 
   return (
@@ -367,17 +376,10 @@ const Story = () => {
                   <Button
                     type="submit"
                     size="lg"
-                    disabled={isSubmitting}
                     className="bg-accent hover:bg-accent/90 text-accent-foreground px-10 py-6 text-base font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                   >
-                    {isSubmitting ? (
-                      "Se trimite..."
-                    ) : (
-                      <>
-                        <Send className="w-5 h-5 mr-2" />
-                        Trimite Cererea
-                      </>
-                    )}
+                    <Send className="w-5 h-5 mr-2" />
+                    Trimite Cererea
                   </Button>
                   <p className="text-muted-foreground text-sm mt-4">
                     Te vom contacta în cel mult 24 de ore.
