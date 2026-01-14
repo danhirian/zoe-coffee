@@ -15,7 +15,7 @@ const drinks = [
   },
   {
     name: "Matcha Latte",
-    description: "Matcha japoneză premium combinată cu lapte cremos aburit pentru un gust vibrant și pământesc.",
+    description: "Matcha japoneză premium combinată cu o crema de lapte  pentru un gust vibrant și pământesc.",
     image: matchaLatte,
   },
 ];
