@@ -10,6 +10,7 @@ import menuVideo from "@/assets/menu-video.mp4";
 import menuVideo2 from "@/assets/menu-video-2.mp4";
 import menuVideo3 from "@/assets/menu-video-3.mp4";
 import coffeeCardBg from "@/assets/coffee-card-bg.jpg";
+import nonCoffeeCardBg from "@/assets/non-coffee-card-bg.jpg";
 // Coffee bean decorative component
 const CoffeeBean = ({
   className,
@@ -292,18 +293,26 @@ const Menu = () => {
               </Card>
 
               {/* Non Coffee */}
-              <Card className="border-border/50">
-                <CardHeader>
-                  <CardTitle className="font-serif text-2xl text-foreground">Non Coffee</CardTitle>
+              <Card className="border-border/50 relative overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                  <img 
+                    src={nonCoffeeCardBg} 
+                    alt="Non Coffee background" 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/60" />
+                </div>
+                <CardHeader className="relative z-10">
+                  <CardTitle className="font-serif text-2xl text-white">Non Coffee</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="relative z-10">
                   <ul className="space-y-3">
                     {nonCoffeeItems.map((item, index) => <li key={index} className="flex justify-between items-center text-sm">
                         <div className="flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                          <span className="text-black">{item.name}</span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-caramel flex-shrink-0" />
+                          <span className="text-white/90">{item.name}</span>
                         </div>
-                        <span className="font-medium text-foreground">{item.price}</span>
+                        <span className="font-medium text-caramel">{item.price}</span>
                       </li>)}
                   </ul>
                 </CardContent>
