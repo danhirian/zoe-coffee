@@ -1,8 +1,19 @@
 import { MapPin, Clock, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import locationBg from "@/assets/location-bg.jpg";
+
 const Location = () => {
-  return <section id="location" className="py-20 md:py-28 bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+  return <section id="location" className="py-20 md:py-28 text-primary-foreground relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src={locationBg} 
+          alt="Zoe Coffee Truck" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-primary/85" />
+      </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Info */}
