@@ -40,7 +40,16 @@ const Hero = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button variant="warmOutline" size="xl">
+            <Button 
+              variant="warmOutline" 
+              size="xl"
+              onClick={() => {
+                const element = document.querySelector("#story");
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
               Povestea noastră
             </Button>
           </div>
