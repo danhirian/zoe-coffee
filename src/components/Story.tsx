@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import zoeVideo from "@/assets/zoe-coffee-video.mp4";
 import gallery1 from "@/assets/gallery-1.jpg";
@@ -26,6 +26,8 @@ const galleryImages = [
 const Story = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [galleryVisible, setGalleryVisible] = useState(false);
+  const galleryRef = useRef<HTMLDivElement>(null);
 
   const openLightbox = (index: number) => {
     setCurrentIndex(index);
@@ -40,6 +42,24 @@ const Story = () => {
 
   const goToNext = useCallback(() => {
     setCurrentIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
+  }, []);
+
+  // Intersection observer for gallery animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setGalleryVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (galleryRef.current) {
+      observer.observe(galleryRef.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -141,22 +161,30 @@ const Story = () => {
           </div>
 
           {/* Gallery */}
-          <div id="gallery" className="space-y-4 mb-20">
-            <h3 className="font-serif text-2xl font-semibold text-foreground text-center mb-8">
+          <div 
+            id="gallery" 
+            ref={galleryRef}
+            className="space-y-4 mb-20"
+          >
+            <h3 className={`font-serif text-2xl font-semibold text-foreground text-center mb-8 transition-all duration-700 ${galleryVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               Galerie
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {/* Large featured image */}
               <div 
-                className="col-span-2 row-span-2 relative group overflow-hidden rounded-2xl cursor-pointer"
+                className={`col-span-2 row-span-2 relative group overflow-hidden rounded-2xl cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-700 ${galleryVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+                style={{ transitionDelay: '100ms' }}
                 onClick={() => openLightbox(0)}
               >
                 <img 
                   src={galleryImages[0].src} 
                   alt={galleryImages[0].alt}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-coffee-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-coffee-dark/70 via-coffee-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                  <span className="text-sm font-medium bg-accent/80 px-3 py-1 rounded-full">Vezi imaginea</span>
+                </div>
               </div>
               
               {/* Images 2-3 stacked on the right - using flex to fill height */}
@@ -164,32 +192,36 @@ const Story = () => {
                 {galleryImages.slice(1, 3).map((image, index) => (
                   <div 
                     key={index}
-                    className="relative group overflow-hidden rounded-xl cursor-pointer flex-1"
+                    className={`relative group overflow-hidden rounded-xl cursor-pointer flex-1 shadow-md hover:shadow-xl transition-all duration-700 ${galleryVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+                    style={{ transitionDelay: `${200 + index * 100}ms` }}
                     onClick={() => openLightbox(index + 1)}
                   >
                     <img 
                       src={image.src} 
                       alt={image.alt}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-115 group-hover:brightness-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-coffee-dark/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-coffee-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                    <div className="absolute inset-0 border-2 border-white/0 group-hover:border-white/30 rounded-xl transition-all duration-500" />
                   </div>
                 ))}
               </div>
 
-              {/* Images 4-6 in a row */}
+              {/* Images 4-9 in a row */}
               {galleryImages.slice(3).map((image, index) => (
                 <div 
                   key={index + 3}
-                  className="relative group overflow-hidden rounded-xl aspect-square cursor-pointer"
+                  className={`relative group overflow-hidden rounded-xl aspect-square cursor-pointer shadow-md hover:shadow-xl transition-all duration-700 ${galleryVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'}`}
+                  style={{ transitionDelay: `${400 + index * 80}ms` }}
                   onClick={() => openLightbox(index + 3)}
                 >
                   <img 
                     src={image.src} 
                     alt={image.alt}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-115 group-hover:brightness-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-coffee-dark/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-coffee-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                  <div className="absolute inset-0 border-2 border-white/0 group-hover:border-white/30 rounded-xl transition-all duration-500" />
                 </div>
               ))}
             </div>
