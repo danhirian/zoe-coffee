@@ -27,7 +27,9 @@ const Story = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [galleryVisible, setGalleryVisible] = useState(false);
+  const [storyVisible, setStoryVisible] = useState(false);
   const galleryRef = useRef<HTMLDivElement>(null);
+  const storyRef = useRef<HTMLDivElement>(null);
 
   const openLightbox = (index: number) => {
     setCurrentIndex(index);
@@ -62,6 +64,24 @@ const Story = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Intersection observer for story/video animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStoryVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (storyRef.current) {
+      observer.observe(storyRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!lightboxOpen) return;
@@ -90,8 +110,8 @@ const Story = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Main Story */}
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-20">
-            <div className="space-y-6">
+          <div ref={storyRef} className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-20">
+            <div className={`space-y-6 transition-all duration-1000 ${storyVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
               <p className="text-accent text-sm uppercase tracking-[0.2em] font-medium">
                 Povestea Noastră
               </p>
@@ -144,19 +164,37 @@ const Story = () => {
             </div>
 
             {/* Video Element */}
-            <div className="relative lg:sticky lg:top-24">
-              <div className="aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl">
+            <div className={`relative lg:sticky lg:top-24 transition-all duration-1000 delay-300 ${storyVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-12 scale-95'}`}>
+              {/* Decorative frame */}
+              <div className="absolute -inset-3 bg-gradient-to-br from-accent/20 via-transparent to-caramel/20 rounded-3xl blur-sm opacity-0 animate-pulse" 
+                   style={{ animation: storyVisible ? 'pulse 3s ease-in-out infinite' : 'none' }} />
+              
+              {/* Glowing border effect */}
+              <div className={`absolute -inset-1 bg-gradient-to-br from-accent/30 to-caramel/30 rounded-2xl transition-opacity duration-1000 ${storyVisible ? 'opacity-100' : 'opacity-0'}`} />
+              
+              <div className="relative aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl group">
                 <video 
                   src={zoeVideo}
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
+                
+                {/* Subtle shimmer overlay */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Play indicator */}
+                <div className="absolute bottom-4 left-4 flex items-center gap-2 text-white/80 text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                  <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+                  Video live
+                </div>
               </div>
-              {/* Floating accent */}
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-accent/10 rounded-full blur-2xl" />
+              
+              {/* Floating accents */}
+              <div className={`absolute -bottom-6 -right-6 w-32 h-32 bg-accent/20 rounded-full blur-2xl transition-all duration-1000 delay-500 ${storyVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`} />
+              <div className={`absolute -top-4 -left-4 w-24 h-24 bg-caramel/15 rounded-full blur-xl transition-all duration-1000 delay-700 ${storyVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`} />
             </div>
           </div>
 
