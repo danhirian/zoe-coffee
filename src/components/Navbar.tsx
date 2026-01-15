@@ -13,11 +13,11 @@ const Navbar = () => {
     name: "Meniu",
     href: "/menu"
   }, {
-    name: "Galerie",
-    href: "/#gallery"
-  }, {
     name: "Povestea noastră",
     href: "/#story"
+  }, {
+    name: "Galerie",
+    href: "/#gallery"
   }, {
     name: "Unde ne găsiți?",
     href: "/#location"
