@@ -62,7 +62,7 @@ const BeagleCompanion = () => {
   return (
     <div 
       className={`fixed bottom-6 right-6 z-50 cursor-pointer transition-transform duration-500 ease-out ${
-        isScrolling ? "translate-y-[-8px] scale-105" : "translate-y-0 scale-100"
+        isScrolling ? "translate-y-[-8px] scale-105" : "animate-float"
       }`}
       onClick={handleClick}
       title="Click me for a new pose!"
