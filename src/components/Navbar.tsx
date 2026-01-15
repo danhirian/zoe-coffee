@@ -13,6 +13,9 @@ const Navbar = () => {
     name: "Meniu",
     href: "/menu"
   }, {
+    name: "Galerie",
+    href: "/#gallery"
+  }, {
     name: "Povestea noastră",
     href: "/#story"
   }, {
