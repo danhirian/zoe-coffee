@@ -10,7 +10,7 @@ const drinks = [
   },
   {
     name: "Latte Macchiato",
-    description: "Espresso și cremă de lapte în straturi, cremos și bogat cu un gradient frumos.",
+    description: "Lapte cremos stratificat cu espresso, pentru un gust delicat.",
     image: latteMacchiato,
   },
   {
