@@ -141,7 +141,7 @@ const Story = () => {
           </div>
 
           {/* Gallery */}
-          <div className="space-y-4 mb-20">
+          <div id="gallery" className="space-y-4 mb-20">
             <h3 className="font-serif text-2xl font-semibold text-foreground text-center mb-8">
               Galerie
             </h3>
