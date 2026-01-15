@@ -10,9 +10,6 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const navLinks = [{
-    name: "Meniu",
-    href: "/menu"
-  }, {
     name: "Povestea noastră",
     href: "/#story"
   }, {
